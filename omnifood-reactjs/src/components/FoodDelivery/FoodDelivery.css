@@ -1,3 +1,31 @@
 .section__FoodDelivery {
   padding: 60px 0 0 0;
 }
+
+.long-copy {
+  line-height: 145%;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.box p {
+  font-size: 90%;
+  line-height: 145%;
+}
+
+.icon_foodDelivery {
+  font-size: 400%;
+  fill: #c0392b;
+  display: block;
+  margin-bottom: 10px;
+}
+
+ion-icon {
+  color: #c0392b;
+  height: 48px;
+  width: 48px;
+}
+
+:host(.icon-large) {
+  font-size: 350% !important;
+}
