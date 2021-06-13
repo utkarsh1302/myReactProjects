@@ -1,0 +1,31 @@
+.section-plans {
+  background-color: #f4f4f4;
+  height: inherit;
+}
+
+.plan-box {
+  background-color: #ffff;
+  border-radius: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  margin-right: 5%;
+  font-weight: 250;
+  box-shadow: 0 2px 2px #ded8d7;
+}
+
+.plan-box div {
+  padding-left: 15px;
+}
+
+.plan-box p {
+  margin: 0;
+}
+
+.plan-box a {
+  margin: 0 auto;
+}
+
+.plan-price {
+  font-size: 200%;
+  color: #c0392b;
+}
