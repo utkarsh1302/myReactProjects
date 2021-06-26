@@ -44,6 +44,22 @@
       "email": "yong@test.com",
       "password": "$2a$10$2WYrynAzS4z2YnYZ8zhR9.49js0ZW5A2secitlWjLlhFqzNPh6RkS",
       "id": 9
+    },
+    {
+      "email": "user@test.com",
+      "password": "$2a$10$EVD4q9Upp1sTXyduwbUKw.O.Z6SD01J7nOL7xXXQuRORs.mXQChIa",
+      "firstName": "user",
+      "lastName": "one",
+      "project": "IBM Watson",
+      "id": 10
+    },
+    {
+      "email": "two@test.com",
+      "password": "$2a$10$Y1x7C6Uold3IDfVMdahcXe1pfYjaoEjWZj6LuSA3H/uGoJJeQNB6q",
+      "firstName": "user ",
+      "lastName": "two",
+      "project": "IBM Watson",
+      "id": 11
     }
   ]
 }

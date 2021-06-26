@@ -1,24 +1,25 @@
-import { TextField, Grid, Button } from "@material-ui/core";
-import React, { useRef, useState } from "react";
-import axios from "axios";
+import TextField from "@material-ui/core/TextField";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import React, { useState } from "react";
 
 import { connect } from "react-redux";
 import "./Login.scss";
-import Validation from "../../Utils/InputValidation/Regex";
-import { userActions } from "../../store/Actions/ActionTypes.js";
-import { useHistory } from "react-router";
+import { LoginActions } from "../../store/Actions/LoginActions/LoginActions";
+import history from "../../Routes/history";
+
+import {
+  checkPasswordValidation,
+  checkEmailValidation,
+} from "../../Utils/InputValidation/CheckValidation";
 
 const cssBase = "login";
 
 const Login = (props) => {
-  const history = useHistory();
   const [email, setEmail] = useState("");
   const [passwd, setPasswd] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isPasswdValid, setIsPasswdValid] = useState(true);
-
-  const emailRef = useRef();
-  const loginBtnRef = useRef();
 
   const authenticateUser = (event) => {
     event.preventDefault();
@@ -36,16 +37,6 @@ const Login = (props) => {
     if (event.keyCode === 13) {
       authenticateUser(event);
     }
-  };
-
-  const checkEmailValidation = (email) => {
-    const emailRegex = new RegExp(Validation.EMAIL);
-    return emailRegex.test(email);
-  };
-
-  const checkPasswordValidation = (passwd) => {
-    const passwordRegex = new RegExp(Validation.PASSWORD);
-    return passwordRegex.test(passwd);
   };
 
   return (
@@ -73,7 +64,6 @@ const Login = (props) => {
                   }
                 }
               }}
-              ref={emailRef}
               helperText={isEmailValid ? null : "Enter valid E-mail"}
               onKeyDown={handleEnter}
             />
@@ -82,6 +72,7 @@ const Login = (props) => {
               className={`${cssBase}_passwdField`}
               label="Password"
               type="password"
+              autoComplete="On"
               onInput={(event) => {
                 setPasswd(event.target.value);
                 setIsPasswdValid(true);
@@ -100,7 +91,6 @@ const Login = (props) => {
               color="primary"
               className={`${cssBase}_loginBtn`}
               type="submit"
-              ref={loginBtnRef}
             >
               Login
             </Button>
@@ -126,27 +116,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-function loginAction(email, passwd) {
-  return (dispatch, getState) => {
-    axios
-      .post("http://localhost:8000/login", {
-        email: email,
-        password: passwd,
-      })
-      .then((response) => {
-        dispatch({
-          type: userActions.SET_USER_DETAILS,
-          data: { email: email, token: response.data },
-        });
-      })
-      .catch((error) => alert("Something went wrong"));
-  };
-}
-
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleAuthentication: (email, passwd) => {
-      dispatch(loginAction(email, passwd));
+    handleAuthentication: async (email, passwd) => {
+      await dispatch(LoginActions.loginAction(email, passwd));
+      history.push("/dashboard");
     },
   };
 };

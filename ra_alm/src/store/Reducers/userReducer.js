@@ -3,6 +3,7 @@ import { userActions } from "../Actions/ActionTypes";
 const INITIAL_STATE = {
   email: "",
   token: "",
+  isLoggedIn: false,
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
@@ -12,6 +13,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
         ...state,
         email: action.data.email,
         token: action.data.token.accessToken,
+        isLoggedIn: action.data.isLoggedIn,
       };
     default:
       return state;

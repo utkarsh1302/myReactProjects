@@ -1,0 +1,38 @@
+.signup {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(-70deg, #2b6777 50%, rgba(0, 0, 0, 0) 50%),
+    #c8d8e4;
+
+  &_container {
+    padding-top: 24px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 12px;
+    padding-bottom: 24px;
+    background-color: #f4f4f4;
+  }
+
+  &_signUpHeader {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  &_signUpHeaderLogo {
+    margin: 0 auto;
+  }
+
+  &_field {
+    width: 100%;
+  }
+
+  &_select {
+    height: 48px;
+  }
+
+  &_submitBtn {
+    margin: 8px !important;
+    width: 86px;
+  }
+}

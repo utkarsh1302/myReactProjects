@@ -1,6 +1,6 @@
 import { Redirect, Route, Switch } from "react-router-dom";
-import Login from "../../Pages/Login/Login.js";
-import SignUp from "../../Pages/SignUp/SignUp.js";
+import Login from "../Pages/Login/Login.js";
+import SignUp from "../Pages/SignUp/SignUp.js";
 
 const Routes = (props) => {
   return (

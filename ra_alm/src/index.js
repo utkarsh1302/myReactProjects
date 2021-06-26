@@ -2,15 +2,24 @@ import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
 import "./index.css";
 // import Main from "./Pages/Main/Main";
 import reportWebVitals from "./reportWebVitals";
-import Routes from "./Components/Routes/Routes";
+import Routes from "./Routes/Routes";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
+import history from "./Routes/history";
 
 const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#2b6777",
+    },
+    secondary: {
+      main: "#52ab98",
+    },
+  },
   typography: {
     fontFamily: [
       "-apple-system",
@@ -31,9 +40,9 @@ ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <BrowserRouter>
+        <Router history={history}>
           <Routes />
-        </BrowserRouter>
+        </Router>
       </Provider>
     </ThemeProvider>
   </React.StrictMode>,
