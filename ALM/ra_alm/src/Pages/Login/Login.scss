@@ -1,0 +1,83 @@
+@import "../../Utils/SCSS/Constants.scss";
+
+.login {
+  background: linear-gradient(
+      -70deg,
+      $background-color-2 30%,
+      rgba(0, 0, 0, 0) 30%
+    ),
+    $background-color-3;
+  height: 100vh;
+  width: 100%;
+
+  &_text {
+    color: $background-color-1;
+    width: 90%;
+    margin: auto;
+    font-size: 400%;
+    font-weight: 600;
+  }
+
+  &_loginContainer {
+    background-color: $background-color-1;
+    width: 65%;
+    margin: auto;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 12px;
+  }
+
+  &_loginForm {
+    display: grid;
+  }
+
+  &_loginHeading {
+    margin: 5%;
+    margin-bottom: 0%;
+    font-size: 200%;
+  }
+
+  &_emailField {
+    width: 90%;
+    margin: 5% !important;
+    margin-bottom: 0% !important;
+  }
+  &_passwdField {
+    width: 90%;
+    margin: 5% !important;
+    margin-bottom: 0% !important;
+  }
+
+  &_loginBtn {
+    margin: 5% !important;
+  }
+  &_signUpBtn {
+    margin: 0% 5% 5% 5% !important ;
+  }
+}
+
+.image {
+  position: absolute;
+  width: 20%;
+  height: auto;
+  border-radius: 50%;
+  -webkit-animation: spin 60s linear infinite;
+  -moz-animation: spin 60s linear infinite;
+  animation: spin 60s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

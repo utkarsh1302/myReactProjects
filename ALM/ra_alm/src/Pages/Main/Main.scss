@@ -1,0 +1,35 @@
+.main {
+  height: 100vh;
+  width: 100%;
+  &_toolbar {
+    padding: 0 !important;
+  }
+
+  &_menuitemContainer {
+    top: 60px !important;
+  }
+
+  &_menuitemsIcon {
+    padding-left: 2px !important;
+  }
+
+  &_menuButton {
+    padding: 18px !important;
+  }
+
+  &_content {
+    position: relative;
+    padding-top: 64px;
+    padding-left: 64px;
+    transition: padding-left ease 0.2s;
+  }
+  &_contentShift {
+    padding-left: 240px;
+  }
+
+  @media (min-width: 600px) {
+    &_menuitemContainer {
+      top: 64px !important;
+    }
+  }
+}
